@@ -1,0 +1,51 @@
+package Program;
+import java.util.Scanner;
+
+public class BubbleSort2 {
+   public static void main(String[] args) {
+       
+  int jumlah,i,j, swap;
+  Scanner scan = new Scanner(System.in);
+  
+ //Input the amount of price that wants to be sorted
+  System.out.print("Masukkan banyaknya harga  : ");
+  jumlah = scan.nextInt();
+ 
+  int array[] = new int[jumlah];
+  
+  //Input price data
+  System.out.println("\nMasukkan " + jumlah+" product");
+  System.out.println("===========================================");
+    for(i=0; i<jumlah;i++)
+    {
+        System.out.print("Product " + (i+1)+" = ");
+        array[i]=scan.nextInt();
+        }
+
+    //Display unsorted data that has been entered before
+        System.out.println("\nUNSORTED PRICE");  
+        for(int a=0;a<jumlah;a++)
+        {
+            System.out.print(array[a] +" ");
+        }
+
+        //Bubble Sort Algorithm Logic
+        for(i=0; i<(jumlah-1);i++)
+        {
+            for(j=0;j<jumlah-i-1;j++)
+            {
+                if (array[j] > array[j+1])
+                {
+                   swap = array[j];
+                   array[j] = array[j+1];
+                   array[j+1]=swap;
+                }
+            }
+        }
+
+        //Display sorted data price
+  System.out.println("\n\nSORTED PRICE");
+  for(i=0;i<jumlah; i++)
+   System.out.print(array[i] +" ");
+ }
+}
